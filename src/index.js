@@ -49,7 +49,7 @@ export default ({editor, store, view, packageInfo, baseClass}) => {
       return result
     }
     $clean () {
-      store.dispatch('extmenu/removeItem', {name: 'Mark Active Line'})
+      store.dispatch('extmenu/deleteItem', {name: 'Mark Active Line', type: 'editorContext'})
     }
   }
 }
