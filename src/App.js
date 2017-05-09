@@ -1,6 +1,6 @@
 import './assets/index.scss'
 export default {
-  props: ['addItem'],
+  props: ['addItem', 'gotoLine'],
   name: 'linemark',
   data () {
     return {
@@ -77,7 +77,7 @@ export default {
     let lists = this.items.map((item, index) => {
       let color = this.getColor(item)
       return <li>
-        <div style={{'background-color': color}}>{item.content}</div>
+        <div onClick={() => this.gotoLine(item)} style={{'background-color': color}}>{item.content}</div>
         <span class="btn-close" onClick={() => this.deleteItem(index)} style={{'background-color': color}}></span>
       </li>
     })

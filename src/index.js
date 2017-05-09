@@ -17,6 +17,16 @@ export default ({editor, store, view, packageInfo, baseClass}) => {
           addItem: function () {
             let item = self.getCurrentLineInfo()
             item && this.pushItem(item)
+          },
+          gotoLine (item) {
+            function callback () {
+              if (item.row) {
+                setTimeout(function () {
+                  editor.gotoLine(item.row + 1)
+                }, 50)
+              }
+            }
+            store.dispatch('editor/setFile', {currentFile: item.path, callback})
           }
         }
       }
