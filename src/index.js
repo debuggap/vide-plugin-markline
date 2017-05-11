@@ -34,6 +34,7 @@ export default ({editor, store, view, packageInfo, baseClass}) => {
       this.$mount({app: App, props, stylePath})
     }
     addItem () {
+      localStorage.markActiveLine = true
       this.vm.showLineMark = true
       let item = this.getCurrentLineInfo()
       item && this.vm.pushItem(item)

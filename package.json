@@ -1,6 +1,6 @@
 {
   "name": "vide-plugin-markline",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "mark current line",
   "author": "vic.wang",
   "scripts": {

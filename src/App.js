@@ -14,7 +14,7 @@ export default {
       },
       colorCache: {},
       items: [],
-      showLineMark: true
+      showLineMark: !!localStorage.markActiveLine
     }
   },
   methods: {
@@ -69,6 +69,7 @@ export default {
         this.cleanColor(i)
       }
       this.items = []
+      localStorage.markActiveLine = false
       this.showLineMark = false
       e.stopPropagation()
     }
