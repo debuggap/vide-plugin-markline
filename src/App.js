@@ -14,7 +14,7 @@ export default {
       },
       colorCache: {},
       items: [],
-      showLineMark: !!localStorage.markActiveLine
+      showLineMark: localStorage.markActiveLine === 'true'
     }
   },
   methods: {
