@@ -76,6 +76,14 @@ export default {
   },
   render (h) {
     let lists = this.items.map((item, index) => {
+      // after modifing row, clean the color cache
+      if (item._prevRow) {
+        let colorIndex = item.path + ':' + item._prevRow
+        let color = this.colorCache[colorIndex]
+        this.bgColors[color] = 0
+        delete this.colorCache[colorIndex]
+        delete item._prevRow
+      }
       let color = this.getColor(item)
       return <li>
         <div onClick={() => this.gotoLine(item)} style={{'background-color': color}}>{item.content}</div>
